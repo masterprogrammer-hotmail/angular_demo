@@ -16,6 +16,9 @@ require.config({
     }
 });
 
-define(['angular','app'], function(){
-    console.log('Monkey')
-});
+// define(['angular','app'], function(){
+//     console.log('main.js')
+// });
+
+// Start the main app logic.
+require(['angular','app']);

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="Demo">
 
 <head>
   <meta charset="utf-8">
@@ -8,24 +8,22 @@
   <script data-main="scripts/main" src="libs/require.js"></script>
 </head>
 
-<body>
+<body ng-controller="demoCtrl">
 <br />
 <h1>3 + 5 = {{3+5}}</h1><br />
 <br />
   <div id="divMain" class="box">
     <label>Name:</label>
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <h1 ng-show="yourName!=undefined">Hello {{yourName}}!</h1>
+    <h1 ng-show="yourName!=undefined">{{greetingSP}} {{yourName}}!</h1>
   </div>
 
   <br /><br />
   <ul id="listGroup" class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
+    <li class="list-group-item">English</li>
+    <li class="list-group-item">Spanish</li>
   </ul>
 
+  
 </body>
 </html>
