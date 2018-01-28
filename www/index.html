@@ -15,7 +15,7 @@
   <div id="divMain" class="box">
     <label>Name:</label>
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <h1>Hello {{yourName}}!</h1>
+    <h1 ng-show="yourName!=undefined">Hello {{yourName}}!</h1>
   </div>
 
 </body>
