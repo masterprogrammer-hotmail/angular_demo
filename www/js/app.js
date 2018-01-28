@@ -4,17 +4,16 @@ define(['angular'], function(angular) {
 
 angular.module('Demo', [])
   .controller('demoCtrl', ['$scope', function ($scope) {
-    $scope.greetingEN = 'Hello';
-    $scope.greetingSP = 'Hola';
+    var greetingEN = 'Hello';
+    var greetingSP = 'Hola';    
     $scope.greeting = '';
-    console.log('app.js');
 
     $scope.setEnglish = function() {
-      $scope.greeting = $scope.greetingEN;
+      $scope.greeting = greetingEN;
     };
 
     $scope.setSpanish = function() {
-      $scope.greeting = $scope.greetingSP;
+      $scope.greeting = greetingSP;
     };
 
 }]);
