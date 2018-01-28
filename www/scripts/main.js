@@ -1,7 +1,8 @@
 require.config({
 
     paths: {
-        'angular': 'angular.min',
+        'angular': '../libs/angular.min',
+        'app': '../js/app'
     },
     //Remember: only use shim config for non-AMD scripts,
     //scripts that do not already call define(). The shim
@@ -10,9 +11,8 @@ require.config({
     //be triggered, and the deps config will be confusing
     //for those cases.
     shim: {
-        'angular': {
-            exports: 'angular'
-        }
+        'angular': { exports: 'angular' },
+        'app': { exports: 'app' }
     }
 });
 
