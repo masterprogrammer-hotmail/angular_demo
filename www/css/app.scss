@@ -24,3 +24,9 @@ body {
 }
 
 .box { @include border-radius(10px); }
+
+#listGroup {
+    li {
+        cursor:pointer;
+    }
+}
