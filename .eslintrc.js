@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": false,
         "amd": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "angular"],
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-newline": "off",
@@ -93,6 +93,7 @@ module.exports = {
         "no-caller": "error",
         "no-catch-shadow": "off",
         "no-confusing-arrow": "error",
+        "no-console": "off",
         "no-continue": "off",
         "no-div-regex": "error",
         "no-duplicate-imports": "error",
