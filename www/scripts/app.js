@@ -3,8 +3,6 @@ define(['angular'], function () {
 
     'use strict';
 
-    console.log('app.js');
-
     // the app with its plugins
     var app = angular.module('app', ['ng']);
 
