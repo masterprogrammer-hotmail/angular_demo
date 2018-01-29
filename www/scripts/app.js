@@ -1,5 +1,5 @@
 // The main app definition
-define(['angular', 'angular-route'], function () {
+define(['angular'], function () {
 
     'use strict';
 

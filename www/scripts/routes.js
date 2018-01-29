@@ -1,4 +1,4 @@
-define(['angular'], function (angular) {
+define(['angular','angular-route'], function (angular) {
 
     'use strict';
     
