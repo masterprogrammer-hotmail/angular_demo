@@ -1,11 +1,13 @@
-define(['angular', '../services/greeting'], function () {
+define(['angular', '../services/greeting', '../js/key'], function () {
+
+  console.log(key);
 
   angular.module('app')
     .controller('demoCtrl', ['$scope','GreetingSVC', function ($scope, GreetingSVC) {
     //.controller('demoCtrl', ['$scope', function ($scope) {
 
       $scope.greeting = GreetingSVC.en;
-      //$scope.greeting = "";
+      $scope.appkey = key;
 
       $scope.setEnglish = function() {
         $scope.greeting = GreetingSVC.en;
