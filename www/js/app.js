@@ -1,21 +1,13 @@
-define(['angular'], function(angular) {
-  //Uses extras in here.
+// The main app definition
+define(['angular'], function () {
 
+    'use strict';
 
-angular.module('Demo', [])
-  .controller('demoCtrl', ['$scope', function ($scope) {
-    var greetingEN = 'Hello';
-    var greetingSP = 'Hola';    
-    $scope.greeting = '';
+    console.log('app.js');
 
-    $scope.setEnglish = function() {
-      $scope.greeting = greetingEN;
-    };
+    // the app with its plugins
+    var app = angular.module('app', ['ng']);
 
-    $scope.setSpanish = function() {
-      $scope.greeting = greetingSP;
-    };
-
-}]);
-
+    // return the app so you can require it in other components
+    return app;
 });

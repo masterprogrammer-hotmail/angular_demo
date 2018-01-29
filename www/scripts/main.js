@@ -1,8 +1,7 @@
 require.config({
-
+    baseUrl: 'scripts',
     paths: {
         'angular': '../libs/angular.min',
-        'app': '../js/app'
     },
     //Remember: only use shim config for non-AMD scripts,
     //scripts that do not already call define(). The shim
@@ -12,7 +11,6 @@ require.config({
     //for those cases.
     shim: {
         'angular': { exports: 'angular' },
-        'app': { exports: 'app' }
     }
 });
 
@@ -21,4 +19,4 @@ require.config({
 // });
 
 // Start the main app logic.
-require(['angular','app']);
+require(['../js/app', '../controllers/democtrl']);
