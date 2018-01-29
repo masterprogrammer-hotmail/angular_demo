@@ -1,5 +1,6 @@
 define(['angular', '../services/greeting', '../js/key'], function () {
 
+  'use strict';
   console.log(key);
 
   angular.module('app')

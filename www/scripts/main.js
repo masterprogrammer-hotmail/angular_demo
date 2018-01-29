@@ -2,6 +2,7 @@ require.config({
     baseUrl: 'scripts',
     paths: {
         'angular': '../libs/angular.min',
+        //'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js',
         'angular-route': '../libs/angular-route.min',
         'key': '../js/key',
     },
@@ -23,4 +24,5 @@ require.config({
 // });
 
 // Start the main app logic.
-requirejs(['../js/app', '../controllers/democtrl']);
+requirejs(['app', '../controllers/democtrl']);
+//requirejs(['app', 'routes']);
