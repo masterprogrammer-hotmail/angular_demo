@@ -1,9 +1,9 @@
 require.config({
     baseUrl: 'scripts',
     paths: {
-        'angular': '../libs/angular.min',
+        'angular': '../libs/angular',
         //'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js',
-        'angular-route': '../libs/angular-route.min',
+        'angular-route': '../libs/angular-route',
         'key': '../js/key',
     },
     //Remember: only use shim config for non-AMD scripts,
