@@ -1,18 +1,20 @@
 define(['angular'], function (angular) {
 
     'use strict';
-
-angular.module('app')
-    .config(function($routeProvider, $locationProvider) {
-
+    
+    angular.module('app')
+    .config(['$locationProvider', '$routeProvider',
+      function config($locationProvider, $routeProvider) {
+        //$locationProvider.hashPrefix('!');
+  
         $routeProvider
-         .when('/', {
-          templateUrl: '../templates/demo.html',
-          controller: 'demoCtrl',
+          .when('/', {
+            template: '../templates/demo.html'
           })
-        .otherwise('/');
-
-        // configure html5 to get links working on jsfiddle
-        $locationProvider.html5Mode(false);
-      });
+          .when('/landing', {
+            template: '../templates/landing.html'
+          })
+          .otherwise('/');
+      }
+    ]);
 });
