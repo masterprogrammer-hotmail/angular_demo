@@ -19,4 +19,4 @@ require.config({
 // });
 
 // Start the main app logic.
-require(['../js/app', '../controllers/democtrl']);
+requirejs(['../js/app', '../controllers/democtrl']);
