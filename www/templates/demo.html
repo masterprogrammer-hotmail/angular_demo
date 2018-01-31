@@ -11,7 +11,11 @@
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
     <span ng-show="yourName!=undefined">
       <h1>{{greeting}} {{yourName}}!</h1>
+      <!-- This is an example that will cause problems if HTML5 mode or 
+        if the hashbang changes.  Link re-writing might be required. -->
       <a href="/about">about</a><br />
+
+      <!-- This will work reguardless and without the need for link re-writing -->
       <a ui-sref='about'>about</a>
     </span>
   </div>

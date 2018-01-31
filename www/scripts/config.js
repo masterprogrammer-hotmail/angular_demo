@@ -17,21 +17,21 @@
             version: '1.0.0.0',
         });
 
-    // angular.module('app')
-    //     .config(['$urlRouterProvider',
-    //         function ($urlRouterProvider) {
-    //             // You can also use regex for the match parameter
-    //             //$urlRouterProvider.when(/aspx/i, '/index');
+    angular.module('app')
+        .config(['$urlRouterProvider',
+            function ($urlRouterProvider) {
+                // You can also use regex for the match parameter
+                //$urlRouterProvider.when(/aspx/i, '/index');
 
-    //             // when there is an empty route, redirect to /demo   
-    //             $urlRouterProvider.when('', '/demo');
-    //             $urlRouterProvider.otherwise('/demo');
-    //         }]);
+                // when there is an empty route, redirect to /demo   
+                $urlRouterProvider.when('', '/');
+                $urlRouterProvider.otherwise('/');
+            }]);
 
     angular.module('app')
         .config(['$locationProvider',
             function ($locationProvider) {
-                $locationProvider.html5Mode(true);
+                $locationProvider.html5Mode(false);
                 //$locationProvider.hashPrefix('!');
             }]);
 // });

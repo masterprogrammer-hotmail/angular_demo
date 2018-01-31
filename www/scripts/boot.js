@@ -1,5 +1,5 @@
 // require(['ionic', 'routes', 'run'], function () {
-  
+
     'use strict';
     console.log('--boot');
 
