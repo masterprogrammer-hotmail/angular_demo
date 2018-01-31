@@ -1,6 +1,8 @@
-define(['angular'], function() {
+// define([], function() {
 
   'use strict';
+
+  console.log('--greeting');
 
   angular.module('app')
     .factory('GreetingSVC', function() {
@@ -13,4 +15,4 @@ define(['angular'], function() {
     return obj;
   });
 
-});
+// });

@@ -1,32 +1,54 @@
 <!doctype html>
 <html ng-app="app">
+<!-- <html> -->
 
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.min.css">
-  <script data-main="scripts/main" src="libs/require.js"></script>
-  <!-- <base href="/"> -->
+  <!-- <script data-main="scripts/main" src="libs/require.js"></script> -->
+  <script src='libs/ionic.bundle.min.js'></script>
+  <script src='libs/angular-ui-router.min.js'></script>
+  <!-- <script src='js/key.js'></script> -->
+  <script src='scripts/app.js'></script>
+  <script src='js/key.js'></script>
+  <script src='scripts/config.js'></script>
+  <script src='scripts/routes.js'></script>
+  <script src='scripts/run.js'></script>
+  <script src='controllers/aboutctrl.js'></script>
+  <script src='controllers/democtrl.js'></script>
+  <script src='services/greeting.js'></script>
+  <!-- <script src='scripts/boot.js'></script> -->
+  <base href="/">
 </head>
 
-<body ng-controller="demoCtrl">
+<body>
   <!-- <ng-view></ng-view> -->
-  <br />
-<h1>AngularJS Demo</h1><br />
-<p>Key: {{appkey}}</p>
+  <!-- <ion-view></ion-view> -->
+  <ui-view></ui-view>
+  
+  <div ng-controller='tempCtrl'>
+This is the index page.<br />If Angular is working, you will see the number eight following this sentence.<br />
 
+{{5+3}}<br />
 <br />
-<div id="divMain" class="box">
-<label>Name:</label>
-<input type="text" ng-model="yourName" placeholder="Enter a name here">
-<h1 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h1>
+<a ui-sref='demo'>demo</a>
+<a ui-sref='about'>about</a>
+<button ng-click='go()'></button>
+<br/>
+When routing is working, clicking the links above will take you to the corrisponding views.
+
 </div>
-
-<br /><br />
-<ul id="listGroup" class="list-group">
-<li class="list-group-item" ng-click="setEnglish()">English</li>
-<li class="list-group-item" ng-click="setSpanish()">Spanish</li>
-</ul>
-
+  <script>
+    angular.module('app')
+    .controller('tempCtrl', ['$scope','$state', function ($scope, $state) {
+        $scope.go = function(){
+          console.log('clicked');
+          $state.go('demo');
+        };
+      }]);
+    // //angular.bootstrap(window.document, ['demo']);
+  </script>
 </body>
+
 </html>

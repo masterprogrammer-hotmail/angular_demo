@@ -1,9 +1,17 @@
 require.config({
+    waitSeconds: 7,
+    baseUrl: '',
+    //urlArgs: "rbust=" + key,
+    skipDataMain: false,
+    //enforceDefine: false,
     baseUrl: 'scripts',
     paths: {
-        'angular': '../libs/angular',
-        //'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js',
-        'angular-route': '../libs/angular-route',
+        //'angular': '../libs/angular.min',
+        //'angular': 'http://code.ionicframework.com/1.3.3/js/ionic.bundle.min.js',
+        'ionic': '../libs/ionic.bundle.min',
+        //'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js',
+        //'angular-route': '../libs/angular-route.min',
+        'uirouter': '../libs/angular-ui-router.min',
         'key': '../js/key',
     },
     //Remember: only use shim config for non-AMD scripts,
@@ -13,9 +21,10 @@ require.config({
     //be triggered, and the deps config will be confusing
     //for those cases.
     shim: {
-        'angular': { exports: 'angular' },
-        'angular-route': { exports: 'angular-route' },
-        'key': { exports: 'key' },
+        'ionic': { exports: 'ionic' },
+        //'angular-route': { exports: 'angular-route' },
+        'uirouter': { deps: ['ionic'] },
+        'key': { exports: 'key', 'deps': ['ionic'] },
     }
 });
 
@@ -24,5 +33,7 @@ require.config({
 // });
 
 // Start the main app logic.
-requirejs(['app', '../controllers/democtrl']);
-//requirejs(['app', 'routes']);
+//requirejs(['app', 'uirouter', '../controllers/democtrl']);
+//requirejs(['app', 'routes', 'run']);
+//requirejs(['app', 'config', 'run', 'routes']);
+requirejs(['ionic', 'uirouter', 'boot']);
