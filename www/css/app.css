@@ -20,6 +20,6 @@ body {
   border-radius: 10px;
 }
 
-#listGroup li {
+.list-group li {
   cursor: pointer;
 }
