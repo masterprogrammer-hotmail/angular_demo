@@ -27,6 +27,15 @@ angular.module('app')
         console.log("Error: ", errorMessage)
     });
 
+    swapiService.getRoot2()
+      .then(function(data) {
+        $scope.swapidata2 = data;
+      },
+      function(errorMessage) {
+        // error
+        console.log("Error: ", errorMessage)
+    });
+
 }]);
 
 });

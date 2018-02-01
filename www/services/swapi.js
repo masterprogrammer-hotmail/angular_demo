@@ -21,8 +21,13 @@ define(['angular'], function () {
             return deferred.promise;
         }
 
+        function getRoot2() {
+            return $http.get(_swapiurl);
+        }
+
         return {
-            getRoot: getRoot
+            getRoot: getRoot,
+            getRoot2: getRoot2
         }
     });
 
