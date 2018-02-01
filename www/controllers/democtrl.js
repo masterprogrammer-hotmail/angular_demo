@@ -14,24 +14,18 @@ angular.module('app')
       $scope.greeting = GreetingSVC.sp;
     };
 
-    // Star Wars API
-    SWAPISVC.
-      then(function(response) {
-        // this callback will be called asynchronously
-        // when the response is available
-        console.log("SWAPI SUCCESS: ", response);
+    $scope.showNextURL = function(nextURL) {
+      console.log('nextURL:' , nextURL)
+    };
 
-        $scope.swapidata = response.data;
+    SWAPISVC.fetch()
+      .then(function(data) {
+        $scope.swapidata = data;
+      },
+      function(errorMessage) {
+        // error
+    });
 
-      }, function(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-        console.log('Error: ', response);
-      });
-
-      $scope.showNextURL = function(url) {
-        console.log("NextURL: ", url);
-      };
 }]);
 
 });

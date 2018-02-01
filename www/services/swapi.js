@@ -2,26 +2,31 @@ define(['angular'], function() {
 
     angular.module('app')
       .factory('SWAPISVC', function($http, $q) {
-        var deferred = $q.defer();
+        
+        var swapiurl = 'https://swapi.co/api/';
+        
+        return { 
+            fetch: function() {
+                
+                var deferred = $q.defer();
 
-        return $q(function(resolve, reject) {
+                $http.get('https://swapi.co/api/')
+                    .then(function(response) {
 
-            $http.get('https://swapi.co/api/')
-                .then(function(response) {
+                        console.log("SWAPI SUCCESS: ", response);
 
-                    console.log("SWAPI SUCCESS: ", response);
-    
-                    resolve(response.data);
-            
-                }, function(response) {
-                    // On Error
-                    console.log('Error: ', response);
+                        deferred.resolve(response.data);
+                
+                    }, function(response) {
+                        // On Error
+                        console.log('Error: ', response);
 
-                    reject('There was an error with the service call.');
-                });
+                        deferred.reject('There was an error with the service call.');
+                    });
 
-        }); // /$q
-
+                return deferred.promise;
+            }
+        }
     }); // /module
   
   });
