@@ -1,12 +1,12 @@
-define(['angular', '../services/greeting'], function () {
+define(['angular', '../services/greeting', '../services/swapi'], function () {
 
 
 angular.module('app')
-  .controller('demoCtrl', ['$scope','GreetingSVC', function ($scope, GreetingSVC) {
+  .controller('demoCtrl', ['$scope','GreetingSVC', 'SWAPISVC', function ($scope, GreetingSVC, SWAPISVC) {
   //.controller('demoCtrl', ['$scope', function ($scope) {
 
     $scope.greeting = GreetingSVC.en;
-    //$scope.greeting = "";
+    $scope.swapi = SWAPISVC;
 
     $scope.setEnglish = function() {
       $scope.greeting = GreetingSVC.en;
