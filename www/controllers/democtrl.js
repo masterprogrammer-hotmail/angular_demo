@@ -24,6 +24,7 @@ angular.module('app')
       },
       function(errorMessage) {
         // error
+        console.log("Error: ", errorMessage)
     });
 
 }]);

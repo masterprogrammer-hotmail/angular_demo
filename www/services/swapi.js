@@ -12,15 +12,10 @@ define(['angular'], function() {
 
                 $http.get('https://swapi.co/api/')
                     .then(function(response) {
-
-                        console.log("SWAPI SUCCESS: ", response);
-
+                        // Success
                         deferred.resolve(response.data);
-                
                     }, function(response) {
                         // On Error
-                        console.log('Error: ', response);
-
                         deferred.reject('There was an error with the service call.');
                     });
 
