@@ -25,7 +25,9 @@
   </ul>
 
   <br /><br />
-  <div jalign="center">test</div>
+  <ul id="listGroupSWAPI" class="list-group">
+    <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
+  </ul>
 
 </body>
 </html>
