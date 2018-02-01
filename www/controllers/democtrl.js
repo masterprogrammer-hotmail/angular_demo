@@ -2,7 +2,7 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
 
 
 angular.module('app')
-  .controller('demoCtrl', ['$scope','GreetingSVC', 'SWAPISVC', function ($scope, GreetingSVC, SWAPISVC) {
+  .controller('demoCtrl', ['$scope','GreetingSVC', 'swapiService', function ($scope, GreetingSVC, swapiService) {
 
     $scope.greeting = GreetingSVC.en;
 
@@ -18,7 +18,7 @@ angular.module('app')
       console.log('nextURL:' , nextURL)
     };
 
-    SWAPISVC.fetch()
+    swapiService.getRoot()
       .then(function(data) {
         $scope.swapidata = data;
       },
