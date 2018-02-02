@@ -13,8 +13,8 @@
 
   <!-- Language Buttons -->
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-success" ng-class="{'active': display == 'EN'}" ng-click="setEnglish()">English</button>
-    <button type="button" class="btn btn-success" ng-class="{'active': display == 'SP'}" ng-click="setSpanish()">Spanish</button>
+    <button type="button" class="btn btn-success" ng-class="{'active': greeting.lang == 'EN'}" ng-click="setEnglish()">English</button>
+    <button type="button" class="btn btn-success" ng-class="{'active': greeting.lang == 'SP'}" ng-click="setSpanish()">Spanish</button>
   </div>
   <br /><br />
 
@@ -25,7 +25,7 @@
       <input type="text" class="form-control" ng-model="yourName" placeholder="Enter a name here" />
     </div>      
     <div class="col-sm-3">
-        <h2 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h2>
+        <h2 ng-show="yourName!=undefined">{{greeting.greeting}} {{yourName}}!</h2>
     </div>
   </div>
 
