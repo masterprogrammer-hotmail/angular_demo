@@ -4,30 +4,41 @@ define(['angular'], function () {
 
         var _swapiurl = 'https://swapi.co/api/';
 
+        // this is the public section of the service; we will use this to set up anything we need to make the call
         function getRoot() {
 
             var deferred = $q.defer();
 
-            $http.get(_swapiurl)
-                .then(function (response) {
-                    // Success
-                    deferred.resolve(response.data);
+            // DO PRE-CALL WORK
 
-                }, function (response) {
-                    // On Error
-                    deferred.reject('There was an error with the service call.');
-                });
+            // make the private call for data
+            this.root_api.then(function(response){
+                // Success
+                deferred.resolve(response.data);
+            }, function(error){
+                console.log(error);
+                deferred.reject('There was an error with the service call.');
+            });
 
             return deferred.promise;
         }
 
-        function getRoot2() {
-            return $http.get(_swapiurl);
+        // this is the private section of the service; we will use this to do anything we need after making the call
+        function root_api(uri) {
+            $http.get(_swapiurl)
+                .then(function (response) {
+                    // Success
+                    // DO POST-CALL WORK
+                    return response;
+                }, function (error) {
+                    // On Error
+                    console.log(error);
+                }
+            );
         }
 
         return {
             getRoot: getRoot,
-            getRoot2: getRoot2
         }
     });
 
