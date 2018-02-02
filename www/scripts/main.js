@@ -1,7 +1,9 @@
 require.config({
     baseUrl: 'scripts',
+
+    // alias libraries paths
     paths: {
-        'angular': '../libs/angular.min',
+        'angular': '../libs/angular.min'
     },
     //Remember: only use shim config for non-AMD scripts,
     //scripts that do not already call define(). The shim
@@ -10,13 +12,12 @@ require.config({
     //be triggered, and the deps config will be confusing
     //for those cases.
     shim: {
-        'angular': { exports: 'angular' },
-    }
+        'angular': { exports: 'angular' }
+    },
+
 });
 
-// define(['angular','app'], function(){
-//     console.log('main.js')
-// });
 
 // Start the main app logic.
-require(['../js/app', '../controllers/democtrl']);
+// Use file paths or Aliases
+require(['angular', '../js/app', '../controllers/democtrl','../services/greeting', '../services/swapi']);
