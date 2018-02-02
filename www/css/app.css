@@ -31,3 +31,7 @@ body {
   cursor: pointer;
   background-color: #7e7e7e;
 }
+
+#swapiWrapper {
+  margin-top: 50px;
+}

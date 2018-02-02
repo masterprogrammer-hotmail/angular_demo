@@ -8,30 +8,34 @@
 </head>
 <body ng-controller="demoCtrl">
 <div class="container">
-  
-    <h1 id="pageTitle" class="text-center">AngularJS Demo</h1><br />
 
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-success" ng-class="{'active': display == 'EN'}" ng-click="setEnglish()">English</button>
-      <button type="button" class="btn btn-success" ng-class="{'active': display == 'SP'}" ng-click="setSpanish()">Spanish</button>
+  <h1 id="pageTitle" class="text-center">AngularJS Demo</h1><br />
+
+  <!-- Language Buttons -->
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-success" ng-class="{'active': display == 'EN'}" ng-click="setEnglish()">English</button>
+    <button type="button" class="btn btn-success" ng-class="{'active': display == 'SP'}" ng-click="setSpanish()">Spanish</button>
+  </div>
+  <br /><br />
+
+  <!-- Texbox -->
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-1 col-form-label">Name:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" ng-model="yourName" placeholder="Enter a name here" />
+    </div>      
+    <div class="col-sm-3">
+        <h2 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h2>
     </div>
-    <br /><br />
+  </div>
 
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-1 col-form-label">Name:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control" ng-model="yourName" placeholder="Enter a name here" />
-      </div>      
-      <div class="col-sm-3">
-          <h2 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h2>
-      </div>
-    </div>
-
-    <br />
+  <!-- SWAPI stuff -->
+  <div id="swapiWrapper">
     <button type="button" class="btn btn-primary" ng-click="getSWAPIData()">Refresh</button>
     <ul id="listGroupSWAPI" class="list-group">
       <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
     </ul>
+  </div>
 
 </div> <!-- /container -->
 </body>
