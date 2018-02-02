@@ -9,25 +9,39 @@
 </head>
 
 <body ng-controller="demoCtrl">
-<br />
-<h1>AngularJS Demo</h1><br />
-<br />
-  <div id="divMain" class="box">
-    <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">&nbsp;&nbsp;<input type="button" value="Refresh" ng-click="getSWAPIData()">
+
+
+  <div class="container">
+    <br />
+    <h1 class="text-center">AngularJS Demo</h1><br />
+    <br />
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-1 col-form-label">Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" ng-model="yourName" placeholder="Enter a name here" />
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-primary" ng-click="getSWAPIData()">Refresh</button>
+      </div>
+    </div>
     <h1 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h1>
-  </div>
 
-  <br /><br />
-  <ul id="listGroup" class="list-group">
-    <li class="list-group-item" ng-click="setEnglish()">English</li>
-    <li class="list-group-item" ng-click="setSpanish()">Spanish</li>
-  </ul>
+    <br /><br />
+    <ul id="listGroup" class="list-group">
+      <li class="list-group-item" ng-click="setEnglish()">English</li>
+      <li class="list-group-item" ng-click="setSpanish()">Spanish</li>
+    </ul>
 
-  <br /><br />
-  <ul id="listGroupSWAPI" class="list-group">
-    <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
-  </ul>
+    <br /><br />
+    <ul id="listGroupSWAPI" class="list-group">
+      <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
+    </ul>
+
+  </div> <!-- /container -->
+
+
+  <br/><br/>
 
 </body>
 </html>

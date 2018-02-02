@@ -1,1 +1,1 @@
-body{font:100% Helvetica,sans-serif;color:#333}#divMain{background-color:#eee;margin-top:20px;padding:10px}#divMain label{font-weight:bold}.box{-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;border-radius:10px}.list-group li{cursor:pointer}
+body{font:100% Helvetica,sans-serif;color:#fff;background-color:#333;text-shadow:0 0.05rem 0.1rem rgba(0,0,0,0.5);box-shadow:inset 0 0 5rem rgba(0,0,0,0.5)}.list-group li{cursor:pointer;background-color:#7e7e7e}
