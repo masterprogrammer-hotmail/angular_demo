@@ -17,30 +17,15 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
         console.log('nextURL:' , nextURL)
       };
 
-      $scope.getSWAPIData = function(){
-
-        swapiService.getRoot()
-          .then(function(data) {
-            $scope.swapidata = data;
-            console.log(data);
-          },
-          function(errorMessage) {
-            // error
-            console.log("Error: ", errorMessage)
-          }
-        );
-
-        // swapiService.getRoot2()
-        //   .then(function(data) {
-        //     console.log(data);
-        //     $scope.swapidata2 = data;
-        //   },
-        //   function(errorMessage) {
-        //     // error
-        //     console.log("Error: ", errorMessage)
-        // });
-
-      }
+      swapiService.getRoot()
+        .then(function(data) {
+          $scope.swapidata = data;
+        },
+        function(errorMessage) {
+          // error
+          console.log("Error: ", errorMessage)
+        }
+      );
 
   }]);
 
