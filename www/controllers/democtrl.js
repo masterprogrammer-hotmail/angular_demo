@@ -1,4 +1,4 @@
-define(['angular', '../services/greeting', '../services/swapi'], function (angular, GreetingSVC, swapiService) {
+define(['angular', '../services/greeting', '../services/swapi'], function () {
 
   angular.module('app')
     .controller('demoCtrl', ['$scope','GreetingSVC', 'swapiService', function ($scope, GreetingSVC, swapiService) {

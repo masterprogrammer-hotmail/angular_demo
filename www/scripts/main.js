@@ -20,4 +20,4 @@ require.config({
 
 // Start the main app logic.
 // Use file paths or Aliases
-require(['angular', '../js/app', '../controllers/democtrl','../services/greeting', '../services/swapi']);
+require(['../js/app', '../controllers/democtrl']);
