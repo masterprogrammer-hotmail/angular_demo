@@ -4,13 +4,16 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
     .controller('demoCtrl', ['$scope','GreetingSVC', 'swapiService', function ($scope, GreetingSVC, swapiService) {
 
       $scope.greeting = GreetingSVC.en;
+      $scope.display = 'EN';
 
       $scope.setEnglish = function() {
         $scope.greeting = GreetingSVC.en;
+        $scope.display = 'EN';
       };
 
       $scope.setSpanish = function() {
         $scope.greeting = GreetingSVC.sp;
+        $scope.display = 'SP';
       };
 
       $scope.showNextURL = function(nextURL) {

@@ -32,6 +32,8 @@ body {
 */
 
 .list-group {
+    margin-top:15px;
+    
     li {
         cursor:pointer;
         background-color: $secondary-bgcolor;

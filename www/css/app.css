@@ -18,6 +18,10 @@ body {
 
 .box { @include border-radius(10px); }
 */
+.list-group {
+  margin-top: 15px;
+}
+
 .list-group li {
   cursor: pointer;
   background-color: #7e7e7e;
