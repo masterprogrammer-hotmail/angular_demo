@@ -1,20 +1,15 @@
 <!doctype html>
 <html ng-app="app">
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.min.css">
   <script data-main="scripts/main" src="libs/require.js"></script>
 </head>
-
 <body ng-controller="demoCtrl">
-
-
-  <div class="container">
-    <br />
-    <h1 class="text-center">AngularJS Demo</h1><br />
-    <br />
+<div class="container">
+  
+    <h1 id="pageTitle" class="text-center">AngularJS Demo</h1><br />
 
     <div class="btn-group" role="group">
       <button type="button" class="btn btn-success" ng-class="{'active': display == 'EN'}" ng-click="setEnglish()">English</button>
@@ -38,10 +33,6 @@
       <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
     </ul>
 
-  </div> <!-- /container -->
-
-
-  <br/><br/>
-
+</div> <!-- /container -->
 </body>
 </html>
