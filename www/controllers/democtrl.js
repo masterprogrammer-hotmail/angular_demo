@@ -41,9 +41,6 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
         // });
 
       }
-      
-      // this will fire the data call as soon as the controller loads and initializes
-      this.getSWAPIData();
 
   }]);
 

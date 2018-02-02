@@ -14,7 +14,7 @@
 <br />
   <div id="divMain" class="box">
     <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">&nbsp;&nbsp;<input type="button" value="Refresh" ng-click="getSWAPIData()">
     <h1 ng-show="yourName!=undefined">{{greeting}} {{yourName}}!</h1>
   </div>
 

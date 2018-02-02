@@ -12,7 +12,7 @@ define(['angular'], function () {
             // DO PRE-CALL WORK
 
             // make the private call for data
-            this.root_api.then(function(response){
+            root_api(_swapiurl).then(function(response){
                 // Success
                 deferred.resolve(response.data);
             }, function(error){
@@ -25,7 +25,7 @@ define(['angular'], function () {
 
         // this is the private section of the service; we will use this to do anything we need after making the call
         function root_api(uri) {
-            $http.get(_swapiurl)
+            return $http.get(uri)
                 .then(function (response) {
                     // Success
                     // DO POST-CALL WORK
