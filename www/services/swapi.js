@@ -6,11 +6,23 @@ define(['angular'], function () {
 
         // this is the public section of the service; we will use this to set up anything we need to make the call
         function getRoot() {
-            return $http.get(_swapiurl);
+
+            var deferred = $q.defer();
+
+            // make the private call for data
+            $http.get(_swapiurl).then(function(response){
+                // Success
+                deferred.resolve(response.data);
+            }, function(error) {
+                console.log(error);
+                deferred.reject('There was an error with the service call.');
+            });
+
+            return  deferred.promise;
         }
 
         return {
-            getRoot: getRoot,
+            getRoot: getRoot
         }
     });
 
