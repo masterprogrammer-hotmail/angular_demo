@@ -14,8 +14,7 @@ define(['angular'], function () {
                 // Success
                 deferred.resolve(response.data);
             }, function(error) {
-                console.log(error);
-                deferred.reject('There was an error with the service call.');
+                deferred.reject('The force is weak with the SWAPI');
             });
 
             return  deferred.promise;

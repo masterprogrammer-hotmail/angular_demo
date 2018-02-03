@@ -1,13 +1,13 @@
 <!doctype html>
 <html ng-app="app">
 <head>
-  <meta charset="utf-8">
+  <title>AngularJS Demo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.min.css">
   <script data-main="scripts/main" src="libs/require.js"></script>
 </head>
 <body ng-controller="demoCtrl">
-<div class="container">
+<div class="container" ng-cloak>
 
   <h1 id="pageTitle" class="text-center">AngularJS Demo</h1><br />
 
@@ -32,10 +32,105 @@
   <!-- SWAPI stuff -->
   <div id="swapiWrapper">
     <button type="button" class="btn btn-primary" ng-click="getSWAPIData()">Refresh</button>
-    <ul id="listGroupSWAPI" class="list-group">
+    <div class="alert" ng-show="swapiError != ''">{{swapiError}}</div>
+    <ul id="listGroupSWAPI" class="list-group" ng-show="swapiError == ''">
       <li class="list-group-item" ng-repeat="(key, value) in swapidata" ng-click="showNextURL(value)">{{key | uppercase}}</li>
     </ul>
   </div>
+
+  <br/><hr/><br/>
+
+  <!-- FORM -->
+  <div ng-controller="form1ctrl">
+    <form  name="userForm" class="needs-validation" ng-class="{'was-validated' : wasvalidated}" novalidate>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label>First name</label>
+          <input ng-model="user.firstname" type="text" class="form-control" placeholder="First name" value="" required>
+          <div class="invalid-feedback">
+            Please enter a first name.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Last name</label>
+          <input ng-model="user.lastname" type="text" class="form-control" placeholder="Last name" value="" required>
+          <div class="invalid-feedback">
+            Please enter a last name.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input ng-model="user.username" type="text" class="form-control" placeholder="Username" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+            <div class="valid-feedback">
+              Sweet!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label>City</label>
+          <input ng-model="user.city" type="text" class="form-control" placeholder="City" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label>State</label>
+          <input ng-model="user.state" type="text" class="form-control" placeholder="State" required>
+          <div class="invalid-feedback">
+            Please provide a valid state.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label>Zip</label>
+          <input ng-model="user.zip" type="text" class="form-control" placeholder="Zip" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input ng-model="user.agreed" class="form-check-input" type="checkbox" value="" required>
+          <label class="form-check-label">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+
+      <input type="button" class="btn btn-primary" value="Reset" ng-click="reset(form)" />
+      <input type="submit" class="btn btn-primary" value="Submit Form" ng-click="update(user)" />
+    </form>
+    <p>user = {{user | json}}</p>
+    <br/>
+  </div>
+
 
 </div> <!-- /container -->
 </body>

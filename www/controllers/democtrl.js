@@ -18,6 +18,8 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
         console.log('nextURL:' , nextURL)
       };
 
+      $scope.swapiError = '';
+
       $scope.getSWAPIData = function(){
         console.log('getSWAPIData()');
 
@@ -27,7 +29,8 @@ define(['angular', '../services/greeting', '../services/swapi'], function () {
           },
           function(errorMessage) {
             // error
-            console.log("Error: ", errorMessage)
+            console.log("Error: ", errorMessage);
+            $scope.swapiError = errorMessage;
           }
         );
       };
